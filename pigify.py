@@ -1,6 +1,9 @@
-# 
-# File Header
-#
+_author_ = "Ethan Richards"
+# CIS 125
+#pigify
+# pigify.py
+#Converts words to pig latin.
+
 # Define vowels
 
 vowels = "aeiouAEIOU"

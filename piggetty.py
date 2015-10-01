@@ -1,31 +1,76 @@
-#
-# File Header
-#
-# Add your name to this
+_author_ = "Ethan Richards"
+# CIS 125
+#piggetty
+# piggetty.py
+#Converts words from a file to pig latin and puts them into a new file. 
 
-# Define a function called piggy(string) that returns a string
+vowels = "aeiouAEIOU"
+#create a function that pigifies each word.
+def pigify(word):
+    n = 0
+    endWord ="" 
+    for letter in word:
+        if letter in vowels:
+    	    if n == 0:
+    		    pig = word + "yay" 
+    		    return pig
+    	    else:
+    		    pig = word[n:] + endWord + "ay"
+    		    return pig
+        else:
+            endWord += word[n]
+            n += 1
 
-def piggy(word):
-	
-	# Magic Happens Here
-	pig = word
-	# Ignore previous line
-	
-	return pig
+# Open the file *getty.txt* for reading.
 
-# Open the file *getty.txt* for reading.  
+infile = open("getty.txt", "r")
 
-# Open a new file *piggy.txt* for writing.  
+# Open a new file *piggy.txt* for writing.
 
-# Read the getty.txt file into a string.  
+outfile = open("piggy.txt", "w")
 
-# Strip out bad characters (, - .).  
+# Read the getty.txt file into a string. 
 
-# Split the string into a list of words.  
+getString = infile.readline()
+# Create a new empty string. 
+    
+pigString = ""
+    
+# Strip out bad characters (, - .). 
 
-# Create a new empty string.  
+getString = getString.replace(",","")
+getString = getString.replace("-","")
+getString = getString.replace(".","")
 
-# Loop through the list of words, pigifying each one.  
+# Split the string into a list of words.
+
+getList = getString.split()
+
+# Loop through the list of words, pigifying each one.  		
+for word in getList:
+    
+# Add the pigified word (and a space) to the new string.     
+    pigString += str(pigify(word)) + " "
+
+# Write the new string to piggy.txt. 
+
+outfile.write(pigString)
+
+# close the files.
+infile.close
+outfile.close
+
+ 
+
+
+
+
+
+ 
+
+ 
+
+
 
 # Add the pigified word (and a space) to the new string.  
 
