@@ -47,9 +47,11 @@ getString = getString.replace(".","")
 getList = getString.split()
 
 # Loop through the list of words, pigifying each one.  		
+
 for word in getList:
     
 # Add the pigified word (and a space) to the new string.     
+    
     pigString += str(pigify(word)) + " "
 
 # Write the new string to piggy.txt. 
